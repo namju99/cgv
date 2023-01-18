@@ -34,31 +34,35 @@
 
         .gnb{  display:flex; padding-left: 100px;  height: 50px; width:100%; background-color:white; flex-wrap: wrap;
            border-top: 1px solid lightgray;  
-           
+           border-bottom: 2px solid red;
           
          }
         .gnb>li{ list-style: none; width: 110px; height:37px;  padding-top: 13px; display:inline-block;
 
+            
         }
 
-        .gnb>li>a{   padding-bottom:15px; display:block;
+        .gnb>li>a{   padding-bottom:18px; display:block;
+            
              
             font-weight: bold;  text-decoration: none; color: black;  }
 
         
 
-        .submenu{  position:absolute;  margin:auto;
-            z-index: 1;
-            width: 1800px;  left:0; right:0; 
+        .submenu{  position:absolute;  
+             
+            width: 1800px;  left:0;
             
             height: 300px; display:none;
              
-            border-top: 2px solid red;
-            background-color:white;
             
-             
+            background-color:white;
     }
-        
+
+     .submenu li{ margin-top: 20px; padding-right: 50px;
+    }
+
+  
     
 
         
@@ -87,7 +91,7 @@
         .main-section{ 
             z-index: 0;
             width: 100%; height: 500px; background-color:beige; 
-            border-top: 2px solid red;
+             
         }
         
         
@@ -510,6 +514,7 @@
             <div class="menu">
                 <ul class="gnb">
                     <li><a href="#">영화
+                         
                             <ul class="submenu">
                                     
                                     <li><a href="#">menu1</a></li>
@@ -518,7 +523,7 @@
                                     <li><a href="#">menu1</a></li>
                                     
                                 </a> 
-                                    </ul>   
+                                </ul>   
                                                           
                     </li>
                     
@@ -589,12 +594,15 @@
                            
                         </ul>  
                         
+                        
                          
                     </li>
                     
                     
         
                 </ul>
+
+                
                 
                 <div class="search">
                     <p>|</p>
@@ -1058,7 +1066,7 @@
                 $(".gnb").css("position","static");
                 $(".gnb").css({
                     'background-image':'none',
-                    'border-bottom' : '0px solid red'
+                    'border-bottom' : '2px solid red'
                 })
                 $(".gnb>li>a").css({
                     'color':'black'
@@ -1103,6 +1111,8 @@
 
         const button4 = document.querySelector("#button4");
         const button5 = document.querySelector("#button5");
+
+        const button1 = document.querySelector('#button1');
         
 
         
@@ -1160,24 +1170,44 @@
         const eWid = event.getBoundingClientRect().width;
         const cWid = chart.getBoundingClientRect().width;
 
-        let y = -eWid;
+            
+
 
         button2.addEventListener('click',function(){
+            move();
+        })
 
 
-            eventBox.style.transform = 'translate('+ y +'px)';
+        const move = function(){
 
             
+            if(eventBox.style.transform == 'translate('+ 0 +'px)'){
+
+             let y = -eWid;
+
             button2.style.opacity = "0";
 
             button3.style.opacity = "0.8";
-            
 
-            
-            
+            eventBox.style.transform = 'translate('+ y +'px)';
+            }
+            else{
+                eventBox.style.transform = 'translate('+ 0 +'px)';
+                 button2.style.opacity="0.8";
+                 button3.style.opacity="0";
+            }
 
-        })
 
+        }
+
+
+
+       let loopInterval = setInterval(()=>{
+        move();
+       }, 4000);
+        
+        
+        
         
 
         button3.addEventListener('click', function(){
@@ -1192,9 +1222,18 @@
         })
 
 
+        button1.addEventListener('click', function(){
+            console.log("stop");
+            clearInterval(loopInterval);
+
+            
+        })
+
+       
 
 
     </script>
+
 
      
      
