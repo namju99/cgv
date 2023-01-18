@@ -13,9 +13,10 @@
     <style>
         *{ margin:0; padding:0; text-decoration:none;}
         body{    width: 100%; height: 100vh;  overflow-x: hidden;   }
-        
+        li{ list-style: none;}
+        li a{ color:black; }
          
-        .top{   width: 100%; height: 120px; background-color: white; background-image: url(./cgv_image/logoRed\ \(1\).png); background-repeat: no-repeat; 
+        .top{   width: 100%; height: 120px; background-color: white; background-image: url(./cgv_image/logoRed.png); background-repeat: no-repeat; 
         background-size: 120px;  background-position: 120px 30px; }
         .top-wrapper{ display:flex; padding-right: 100px; 
         flex-wrap: nowrap;}
@@ -28,18 +29,44 @@
 
         .login a:nth-child(1){ margin-left: 30px;}
 
+        .menu{ display: flex;  }
+
+
+        .gnb{  display:flex; padding-left: 100px;  height: 50px; width:100%; background-color:white; flex-wrap: wrap;
+           border-top: 1px solid lightgray;  
+           border-bottom: 2px solid red;
+          
+         }
+        .gnb>li{ list-style: none; width: 110px; height:37px;  padding-top: 13px; display:inline-block;
+
+            
+        }
+
+        .gnb>li>a{   padding-bottom:18px; display:block;
+            
+             
+            font-weight: bold;  text-decoration: none; color: black;  }
+
         
 
+        .submenu{  position:absolute;  
+             
+            width: 1800px;  left:0;
+            
+            height: 300px; display:none;
+             
+            
+            background-color:white;
+    }
 
-        .gnb{ display:flex; padding-left: 100px; gap:60px; height: 50px; width:100%; background-color:white; flex-wrap: wrap;
-          border-bottom: 1px solid red; border-top: 1px solid lightgray;
-         }
-        li{ list-style: none; width: 50px; padding-top: 13px;}
+     .submenu li{ margin-top: 20px; padding-right: 50px;
+    }
 
-        li a{ text-decoration: none; color: black;
-         }
+  
+    
 
-        .gnb>li>a{ font-weight: bold;}
+        
+    
 
         .submenu>li:nth-child(1)>a{ font-weight: bold;}
 
@@ -47,19 +74,27 @@
             color:red;
         }
 
-        .search{ display:flex; gap: 5px; align-items: center;  width: 100px; padding-left: 200px;}
+        
+        .search{ display:flex; gap: 5px; align-items: center;  width: 100px; padding-left: 800px;
+         position: absolute;}
 
-        .search i{ font-size: 25px; padding-right: 3px; color:black;}
+        .search i{ font-size: 25px; 
+            margin-top: 12px;
+            padding-right: 4px; color:black;}
 
-        .search p{ color: lightgray; font-size: 20px; font-weight: lighter; padding-left: 4px; }
+        .search p{ color: lightgray; font-size: 20px; font-weight:lighter;
+            margin-top:10px;  padding-left: 5px; }
 
          #text{ height: 25px; border: 0px solid black;}
 
 
         .main-section{ 
-            width: 100%; height: 500px; background-color: beige;
-            border-top: 1px solid red;
+            z-index: 0;
+            width: 100%; height: 500px; background-color:beige; 
+             
         }
+        
+        
          .chart-wrapper{ 
             width: 100%; height: 460px; background-color: whitesmoke;
          }
@@ -223,10 +258,7 @@
 
 
 
-        .submenu{ width: 100vh; height:300px; background-color:white; margin-top: 22px;
-        display:none; transform: translateX(-80px);
-    }
-        .submenu>li{ display:block; width: 80px; }
+        
 
 
         .box{ z-index: 0;}
@@ -399,14 +431,14 @@
         color:black;}
 
 
-        .info{ margin-top:-2px; border-bottom: 1px solid lightgray; height: 60px;}
+        .info{ margin-top:0px; border-bottom: 1px solid lightgray; height: 60px;}
         .info-list{ display: flex; gap:20px;   justify-content: center;
         align-items: center;  }
         .info-list li a{ display: block; font-size: 12px; font-weight: bold;
         color: gray; }
 
         .info-list li{ text-align: center; 
-              width: 50px; margin-top:8px;}
+              width: 50px; margin-top: 10px;}
 
         .info-list li:nth-child(4){width: 110px;}
 
@@ -464,7 +496,7 @@
                     <p>C U L T U R E P L E X</p>
                 </div>
                 <div class="card">
-                    <a href="#"><img src="./cgv_image/16727156341060 (1).png" alt=""></a>
+                    <a href="#"><img src="./cgv_image/card.png" alt=""></a>
                 </div>
                 <div class="login">
                     <a href="#"><img src="./cgv_image/loginPassword (1).png" alt=""></a>
@@ -481,82 +513,110 @@
         <nav>
             <div class="menu">
                 <ul class="gnb">
-                    <li><a href="#">영화</a>
-                        <ul class="submenu">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">무비차트</a></li>
-                            <li><a href="#">아트하우스</a></li>
-                            <li><a href="#">ICECON</a></li>
-
-                        </ul>
-                    
+                    <li><a href="#">영화
+                         
+                            <ul class="submenu">
+                                    
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    <li><a href="#">menu1</a></li>
+                                    
+                                </a> 
+                                </ul>   
+                                                          
                     </li>
                     
         
                     <li><a href="#">극장</a>
-                        <ul class="submenu">
-                            <li><a href="#">극장</a></li>
-                            <li><a href="#">cgv극장</a></li>
-                            <li><a href="#">특별관</a></li>
-                             
+                        <ul class="submenu" >
+                            
+                            <li><a href="#">menu2</a></li>
+                            <li><a href="#">menu2</a></li>
+                            <li><a href="#">menu2</a></li>
+                            <li><a href="#">menu2</a></li>
+                            
 
-                        </ul>
+                                                      
+                        </ul>  
                     
                     </li>
                          
                     <li><a href="#">예매</a>
                         <ul class="submenu">
-                            <li><a href="#">예매</a></li>
-                            <li><a href="#">빠른예매</a></li>
-                            <li><a href="#">상영스케줄</a></li>
-                            <li><a href="#">EnglishTicketing</a></li>
-                            <li><a href="#">EnglishSchedule</a></li>
+                            
+                           <li><a href="#">menu3</a></li>
+                          <li><a href="#">menu3</a></li>
+                           <li><a href="#">menu3</a></li>
+                            <li><a href="#">menu3</a></li>
+                           
 
-                        </ul>
+                           
+                        </ul>  
                         
                     </li>
                     <li><a href="#">스토어</a>
                         <ul class="submenu">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">무비차트</a></li>
-                            <li><a href="#">아트하우스</a></li>
-                            <li><a href="#">ICECON</a></li>
+                            
+                                <li><a href="#">menu4</a></li>
+                                <li><a href="#">menu4</a></li>
+                                <li><a href="#">menu4</a></li>
+                                <li><a href="#">menu4</a></li>
+                            
 
-                        </ul>
+                           
+                        </ul>  
                          
                     </li>
                     <li><a href="#">이벤트</a>
                         <ul class="submenu">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">무비차트</a></li>
-                            <li><a href="#">아트하우스</a></li>
-                            <li><a href="#">ICECON</a></li>
+                            
+                                <li><a href="#">menu5</a></li>
+                                <li><a href="#">menu5</a></li>
+                                <li><a href="#">menu5</a></li>
+                                <li><a href="#">menu5</a></li>
+                           
 
-                        </ul>
+                           
+                            
+                        </ul>  
                          
                     </li>
                     <li><a href="#">혜택</a>
                         <ul class="submenu">
-                            <li><a href="#">영화</a></li>
-                            <li><a href="#">무비차트</a></li>
-                            <li><a href="#">아트하우스</a></li>
-                            <li><a href="#">ICECON</a></li>
+                            
+                                <li><a href="#">menu6</a></li>
+                                <li><a href="#">menu6</a></li>
+                                <li><a href="#">menu6</a></li>
+                                <li><a href="#">menu6</a></li>
+                           
 
-                        </ul>
+                           
+                        </ul>  
+                        
+                        
                          
                     </li>
-                    <div class="search">
-                        <p>|</p>
-                        <input type="text" id="text">
-                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        <p>|</p>
-                    </div>
+                    
                     
         
                 </ul>
+
+                
+                
+                <div class="search">
+                    <p>|</p>
+                    <input type="text" id="text">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <p>|</p>
+                </div>
+
+                
                 
                 
             </div>
+            
+            
 
             <div class="search"></div>
         </nav>
@@ -590,7 +650,7 @@
                 <div class="chart-box">
                     <div class="box-wrapper">
                     <div class="box box01">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>1</h1>
                          
                     </div>
@@ -601,7 +661,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box02">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>2</h1>
                     </div>
                     <h3>더 퍼스트 슬램덩크</h3>
@@ -611,7 +671,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box03">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>3</h1>
                     </div>
                     <h3>영웅</h3>
@@ -621,7 +681,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box04">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>4</h1>
                     </div>
                     <h3>장화신은 고양이</h3>
@@ -631,7 +691,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box05">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>5</h1>
                     </div>
                     <h3>교섭</h3>
@@ -641,7 +701,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box06">
-                        <img src="./cgv_image/12 (1).png" alt="">                      
+                        <img src="./cgv_image/12.png" alt="">                      
                         <h1>6</h1>
                     </div>
                     <h3>웃는남자</h3>
@@ -651,7 +711,7 @@
                      
                 <div class="box-wrapper">
                     <div class="box box07">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>7</h1>
                     </div>
                     <h3>몬스터 신부</h3>
@@ -661,7 +721,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box08">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>8</h1>
                     </div>
                     <h3>빈센트 반 고흐</h3>
@@ -671,7 +731,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box09">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>9</h1>
                     </div>
                     <h3>올빼미</h3>
@@ -681,7 +741,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box10">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>10</h1>
                     </div>
                     <h3>300년의 기다림</h3>
@@ -691,7 +751,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box11">
-                        <img src="./cgv_image/12 (1).png" alt="">                      
+                        <img src="./cgv_image/12.png" alt="">                      
                         <h1>11</h1>
                     </div>
                     <h3>프린스챠밍</h3>
@@ -701,7 +761,7 @@
                      
                 <div class="box-wrapper">
                     <div class="box box12">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>12</h1>
                     </div>
                     <h3>시데레우스</h3>
@@ -711,7 +771,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box13">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>13</h1>
                     </div>
                     <h3>HOPE</h3>
@@ -721,7 +781,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box14">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>14</h1>
                     </div>
                     <h3>메간</h3>
@@ -731,7 +791,7 @@
 
                 <div class="box-wrapper">
                     <div class="box box15">
-                        <img src="./cgv_image/12 (1).png" alt="">
+                        <img src="./cgv_image/12.png" alt="">
                         <h1>15</h1>
                     </div>
                     <h3>문맨</h3>
@@ -957,20 +1017,32 @@
     
 
     
-    
-
     <script>
+       
 
-        const menu = $(".menu>ul>li");
-        const submenu = $(".menu>ul>li>.submenu");
+       var menu = $(".menu>ul>li");
+        var submenu = $(".submenu");
 
         menu.mouseover(function(){
-            submenu.stop().slideDown(300);
+            submenu.stop().slideDown();
+    
         })
 
         menu.mouseout(function(){
-            submenu.stop().slideUp(300);
+            submenu.stop().slideUp();
+            
         })
+
+
+        
+    </script>
+
+
+
+
+    <script>
+
+        
 
         $(function(){
             $(window).scroll(function(){
@@ -994,7 +1066,7 @@
                 $(".gnb").css("position","static");
                 $(".gnb").css({
                     'background-image':'none',
-                    'border-bottom' : '1px solid red'
+                    'border-bottom' : '2px solid red'
                 })
                 $(".gnb>li>a").css({
                     'color':'black'
@@ -1039,6 +1111,8 @@
 
         const button4 = document.querySelector("#button4");
         const button5 = document.querySelector("#button5");
+
+        const button1 = document.querySelector('#button1');
         
 
         
@@ -1096,24 +1170,44 @@
         const eWid = event.getBoundingClientRect().width;
         const cWid = chart.getBoundingClientRect().width;
 
-        let y = -eWid;
+            
+
 
         button2.addEventListener('click',function(){
+            move();
+        })
 
 
-            eventBox.style.transform = 'translate('+ y +'px)';
+        const move = function(){
 
             
+            if(eventBox.style.transform == 'translate('+ 0 +'px)'){
+
+             let y = -eWid;
+
             button2.style.opacity = "0";
 
             button3.style.opacity = "0.8";
-            
 
-            
-            
+            eventBox.style.transform = 'translate('+ y +'px)';
+            }
+            else{
+                eventBox.style.transform = 'translate('+ 0 +'px)';
+                 button2.style.opacity="0.8";
+                 button3.style.opacity="0";
+            }
 
-        })
 
+        }
+
+
+
+       let loopInterval = setInterval(()=>{
+        move();
+       }, 4000);
+        
+        
+        
         
 
         button3.addEventListener('click', function(){
@@ -1128,9 +1222,18 @@
         })
 
 
+        button1.addEventListener('click', function(){
+            console.log("stop");
+            clearInterval(loopInterval);
+
+            
+        })
+
+       
 
 
     </script>
+
 
      
      
