@@ -34,10 +34,10 @@
 
         .gnb{  display:flex; padding-left: 100px;  height: 50px; width:100%; background-color:white; flex-wrap: wrap;
            border-top: 1px solid lightgray;  
-           border-bottom: 2px solid red;
+           border-bottom: 2px solid red; 
           
          }
-        .gnb>li{ list-style: none; width: 110px; height:37px;  padding-top: 13px; display:inline-block;
+        .gnb>li{ list-style: none; width: 80px; height:37px;  padding-top: 13px; display:inline-block;
 
             
         }
@@ -53,16 +53,60 @@
              
             width: 1800px;  left:0;
             
-            height: 300px; display:none;
+            height: 320px; display:none;
              
             
-            background-color:white;
+            background-color:white; 
     }
 
-     .submenu li{ margin-top: 20px; padding-right: 50px;
+     .submenu li{ margin-top: 10px; padding-right: 50px; font-size: 14px;
+        font-weight: bold; margin-left: 20px; 
+        
     }
 
+    .submenu li:hover{
+        text-decoration: underline;
+    }
+
+    .subwrap p{ color: black;}
+
+    .subwrap li a{ color: gray;}
+
+    .subwrap>li:nth-child(1){ font-weight: bolder; font-size: 15px;
+     }
+
+    .sub-wrap1{ background-color: white; width: 150px; height:270px;
+        left: 100px; position: absolute; z-index: 1; 
+        margin-top:20px; 
+           
+    }
   
+    .sub-wrap2{ background-color: white; width:150px; height:270px;
+        border-left: 1px solid rgba(211, 211, 211, 0.685);
+        margin-top:20px; 
+         
+    left: 250px; position:absolute; z-index: 1; border-right: 1px solid black;  }
+
+    .sub-wrap3{ background-color: white; width:150px; height:270px;
+    left: 400px; position:absolute; z-index: 1; 
+    border-left: 1px solid rgba(211, 211, 211, 0.685); margin-top:20px; 
+      }
+
+      .subwrap a{ width: 150px;  display: block; }
+
+    .sub-wrap4{ background-color: white; width:150px; height:270px;
+    left: 550px; position:absolute; z-index: 1; 
+    border-left: 1px solid rgba(211, 211, 211, 0.685);  margin-top:20px; 
+      }
+
+    .sub-wrap5{ background-color: white; width:150px; height:270px;
+    left: 700px; position:absolute; z-index: 1;  
+    border-left: 1px solid rgba(211, 211, 211, 0.685);  margin-top:20px; 
+     }
+
+    .sub-wrap6{ background-color: white; width:150px; height:270px;
+    left: 850px; position:absolute; z-index: 1; 
+    border-left: 1px solid rgba(211, 211, 211, 0.685);   margin-top:20px;  }
     
 
         
@@ -76,7 +120,7 @@
 
         
         .search{ display:flex; gap: 5px; align-items: center;  width: 100px; padding-left: 800px;
-         position: absolute;}
+         position: absolute; z-index: 2;}
 
         .search i{ font-size: 25px; 
             margin-top: 12px;
@@ -513,30 +557,32 @@
         <nav>
             <div class="menu">
                 <ul class="gnb">
-                    <li><a href="#">영화
+                    <li><a href="#">영화</a> 
                          
                             <ul class="submenu">
+                                    <div class="subwrap sub-wrap1">
+                                    <li><a href="#"><p>영화</p></a></li>
+                                    <li><a href="#">무비차트</a></li>
+                                    <li><a href="#">아트하우스</a></li>
+                                    <li><a href="#">ICECON</a></li>
+                                    </div>
                                     
-                                    <li><a href="#">menu1</a></li>
-                                    <li><a href="#">menu1</a></li>
-                                    <li><a href="#">menu1</a></li>
-                                    <li><a href="#">menu1</a></li>
-                                    
-                                </a> 
-                                </ul>   
+                                 
+                                </ul> 
+                             
                                                           
                     </li>
                     
         
                     <li><a href="#">극장</a>
                         <ul class="submenu" >
+                            <div class="subwrap sub-wrap2">
+                            <li><a href="#"><p>극장</p></a></li>
+                            <li><a href="#">CGV극장</a></li>
+                            <li><a href="#">특별관</a></li>
+                             
                             
-                            <li><a href="#">menu2</a></li>
-                            <li><a href="#">menu2</a></li>
-                            <li><a href="#">menu2</a></li>
-                            <li><a href="#">menu2</a></li>
-                            
-
+                            </div>
                                                       
                         </ul>  
                     
@@ -544,38 +590,48 @@
                          
                     <li><a href="#">예매</a>
                         <ul class="submenu">
-                            
-                           <li><a href="#">menu3</a></li>
-                          <li><a href="#">menu3</a></li>
-                           <li><a href="#">menu3</a></li>
-                            <li><a href="#">menu3</a></li>
+                            <div class="subwrap sub-wrap3">
+                           <li><a href="#"><p>예매</p></a></li>
+                          <li><a href="#">빠른예매</a></li>
+                           <li><a href="#">상영스케줄</a></li>
+                            <li><a href="#">English Ticketing</a></li>
+                            <li><a href="#">English Schedule</a></li>
                            
-
+                            </div>
                            
                         </ul>  
                         
                     </li>
                     <li><a href="#">스토어</a>
                         <ul class="submenu">
+                            <div class="subwrap sub-wrap4">
+                                <li><a href="#"><p>스토어</p></a></li>
+                                <li><a href="#">영화관람권</a></li>
+                                <li><a href="#">기프트카드</a></li>
+                                <li><a href="#">콤보</a></li>
+                                <li><a href="#">팝콘</a></li>
+                                <li><a href="#">음료</a></li>
+                                <li><a href="#">스낵</a></li>
+                                <li><a href="#">플레이존</a></li>
+                                <li><a href="#">씨네샵</a></li>
                             
-                                <li><a href="#">menu4</a></li>
-                                <li><a href="#">menu4</a></li>
-                                <li><a href="#">menu4</a></li>
-                                <li><a href="#">menu4</a></li>
-                            
-
+                            </div>
                            
                         </ul>  
                          
                     </li>
                     <li><a href="#">이벤트</a>
                         <ul class="submenu">
-                            
-                                <li><a href="#">menu5</a></li>
-                                <li><a href="#">menu5</a></li>
-                                <li><a href="#">menu5</a></li>
-                                <li><a href="#">menu5</a></li>
-                           
+                            <div class="subwrap sub-wrap5">
+                                <li><a href="#"><p>이벤트</p></a></li>
+                                <li><a href="#">SPECIAL</a></li>
+                                <li><a href="#">영화/예매</a></li>
+                                <li><a href="#">멤버십/CLUB</a></li>
+                                <li><a href="#">CGV극장별</a></li>
+                                <li><a href="#">제휴할인</a></li>
+                                <li><a href="#">당첨자 발표</a></li>
+                                <li><a href="#">종료된 이벤트</a></li>
+                            </div>
 
                            
                             
@@ -584,13 +640,13 @@
                     </li>
                     <li><a href="#">혜택</a>
                         <ul class="submenu">
-                            
-                                <li><a href="#">menu6</a></li>
-                                <li><a href="#">menu6</a></li>
-                                <li><a href="#">menu6</a></li>
-                                <li><a href="#">menu6</a></li>
+                            <div class="subwrap sub-wrap6">
+                                <li><a href="#"><p>혜택</p></a></li>
+                                <li><a href="#">CGV 할인정보</a></li>
+                                <li><a href="#">CLUB 서비스</a></li>
+                                <li><a href="#">VIP 라운지</a></li>
                            
-
+                            </div>
                            
                         </ul>  
                         
@@ -1059,6 +1115,11 @@
                 $(".gnb>li>a").css({
                     'color':'white'
                 })
+
+                $(".search").css({
+                    'position':'fixed',
+                    'top':0
+                })
                 
                 
             }
@@ -1073,6 +1134,15 @@
                 })
                 $(".gnb>li:nth-child(3)>a").css({
                     'color':'#fb4357'
+                })
+
+                $(".search").css({
+                    'position':'absolute',
+                    'top': '120px'
+                    
+                    
+                      
+                    
                 })
                 
             }
@@ -1204,7 +1274,7 @@
 
        let loopInterval = setInterval(()=>{
         move();
-       }, 4000);
+       }, 3000);
         
         
         
