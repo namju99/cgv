@@ -328,21 +328,13 @@
          }
          .event h2{ display:inline-block; padding-top: 0px; padding-left: 130px; 
         }
-        .event #button1{ display:inline-block; position: absolute;
-
-              z-index: 1;
+        .event #button1{ display:inline-block; 
             transform: translateY(6px);
             margin-left: 800px;  cursor: pointer;
-            background-color: white; 
+            background-color: white; background-image: url(./cgv_image/play.png);
             background-repeat: no-repeat; background-size: 12px;
             background-position: center center;
             width: 30px; height:30px; border: 1px solid lightgray; border-radius: 20px;}
-
-
-            #button1 img{ width: 12px; height:15px;}
-
-            
-
 
         .event{ position:relative; background-color: white; height: 310px; 
         width: 1110px; overflow: hidden;}
@@ -877,8 +869,7 @@
             <button id="button3"></button>
             <div class="event">
                 <h2>EVENT</h2>
-                <button id="button1"><img src="./cgv_image/stop.png" alt=""></button>
-                 
+                <button id="button1"></button>
                  
                 <div class="event-box">
                    
@@ -1192,7 +1183,6 @@
         const button5 = document.querySelector("#button5");
 
         const button1 = document.querySelector('#button1');
-        const button6 = document.querySelector('#button6');
         
 
         
@@ -1201,8 +1191,6 @@
          let num = 0;
 
         button4.addEventListener("click",function(){
-
-            
 
             if(  num < 2 ){
                 x = x + 1020;
@@ -1213,14 +1201,13 @@
                 chartBox.style.transform = 'translate(' + -2040 + 'px)';
                 
             }
+            console.log(num);
+            console.log(x);
             
             
-
-        })
 
         
-       
-    
+        })
 
         
         
@@ -1253,116 +1240,112 @@
         const eWid = event.getBoundingClientRect().width;
         const cWid = chart.getBoundingClientRect().width;
 
-
-
-        var isStop = true; 
         
-        function startTimer(){
+  
+        let timer= setInterval(()=>{
+        move();
+       }, 3000);
+
+  
+        
+       
+
+        button2.addEventListener('click',function(){
+
             
-            timer =  setInterval(function(){
-                if( isStop == true){
-                    move();
-                    
+            
+            clearInterval(timer); 
+          
+            move();
 
-                }
+             timer = setInterval(() => {
+                move();
+             }, 3000);
 
-            },4000); 
-        }
+           
+           
+        })
 
-        startTimer();
 
+         
+
+         
+
+    
+
+        
+
+         
+
+        
        
 
 
-
-        const move =  function(){
+        const move = function(){
 
             
-        if(eventBox.style.transform == 'translate('+ 0 +'px)'){
+            if(eventBox.style.transform == 'translate('+ 0 +'px)'){
 
-        let y = -eWid;
+             let y = -eWid;
 
-        button2.style.opacity = "0";
+            button2.style.opacity = "0";
 
-        button3.style.opacity = "0.8";
+            button3.style.opacity = "0.8";
 
-        eventBox.style.transform = 'translate('+ y +'px)';
+            eventBox.style.transform = 'translate('+ y +'px)';
+            }
+            else{
+                eventBox.style.transform = 'translate('+ 0 +'px)';
+                 button2.style.opacity="0.8";
+                 button3.style.opacity="0";
+            }
+
+
+
+
         }
-        else{
-            eventBox.style.transform = 'translate('+ 0 +'px)';
-            button2.style.opacity="0.8";
-            button3.style.opacity="0";
-        }
 
 
-        } 
+       
 
-        button2.addEventListener('click',function(){
-            console.log("hey");
-            move();
-           
-             
-            
-
-          
-        })
-
-         
+       
+        
+        
+        
         
 
         button3.addEventListener('click', function(){
 
-            button2.style.opacity="0.8";
-            button3.style.opacity="0";
-            
-            let z = 0;
+            move(); 
 
-            eventBox.style.transform = 'translate(' + z + 'px)';
+            clearInterval(timer);
+            timer = setInterval(() => {
+                move();
+            }, 3000);
+
+           
+
+            //button2.style.opacity="0.8";
+            //button3.style.opacity="0";
+            
+            //let z = 0;
+
+            //eventBox.style.transform = 'translate(' + z + 'px)';
             
         })
 
-    </script>
 
-    <script>
+        button1.addEventListener('click', function(){
+            console.log("stop");
+            clearInterval(timer);
+            
 
-     const img1 = $("#button1 img"); 
-     const path1 = "./cgv_image/stop.png";
-     const src =  img1.attr('src');
-     const path2 = "./cgv_image/play.png";
-
-     
+            
+        })
 
        
-         
-
-     img1.on("click", function(){
-    
-    if( img1.attr('src') == path1){
-        console.log('stop');
-        isStop = false;
-        
-        img1.attr('src',path2);
-        
-
-    }else{
-        console.log('play');
-         isStop = true;
-
-        img1.attr('src',path1);
-        
-        
-
-    }
-             
-})
 
 
-    
-    
-    
-    
-
-       
     </script>
 
 
